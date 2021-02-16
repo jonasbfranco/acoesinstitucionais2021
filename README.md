@@ -1,3 +1,37 @@
+# COMANDOS PARA EXECUTAR DEPOIS DE CLONAR O PROJETO
+```shell
+- $ composer install
+- $ php -r "copy('.env.example', '.env');"
+	ou
+- $ @php -r "file_exists('.env') || copy('.env.example', '.env');"
+- $ php artisan key:generate
+    (configurar o arquivo .env, linha = DB_DATABASE=laravel_do_zero)
+- $ php artisan migrate
+```
+
+### Configure o arquivo .env
+~~~php
+- DB_DATABASE=laravel_do_zero
+~~~
+
+### Criar o Controller Contact
+~~~php
+- $ php artisan make:controller Site/ContactController -r
+~~~
+
+### Criar o Controller Blog (pagina estatica)
+~~~php
+- $ php artisan make:controller Site/BlogController --invokable
+~~~
+
+### Entrar no Tinker para testara  conexao com o banco laravel_do_zero (criado no MySQL)
+~~~php
+- $ php artisan tinker
+- $ DB::connection()->getPdo();
+~~~
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
