@@ -14,9 +14,9 @@
 - DB_DATABASE=laravel_do_zero
 ~~~
 
-### Criar o Controller Contact
+### Criar o Controller Palestras
 ~~~php
-- $ php artisan make:controller Site/ContactController -r
+- $ php artisan make:controller PalestrasController
 ~~~
 
 ### Criar o Controller Blog (pagina estatica)

@@ -1,0 +1,21 @@
+/***** Font Google *****/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap');
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container-login {
+    max-width: 568px;
+}
+
+h1 {
+    color: rebeccapurple;
+    font-weight: 700 !important;
+}
+
+footer p {
+    font-size: 12px !important;
+    font-weight: 100 !important;
+}

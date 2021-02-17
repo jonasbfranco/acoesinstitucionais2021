@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class PalestrasController extends Controller
+{
+    public function index() {
+        return view('welcome');
+    }
+
+    public function palestras() {
+        return view('palestras');
+    }
+
+    public function video() {
+        return view('video');
+    }
+
+}

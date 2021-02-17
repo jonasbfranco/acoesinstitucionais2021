@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\PalestrasController;
+
+
+Route::get('/', [PalestrasController::class, 'index']);
+
+Route::get('/palestras', [PalestrasController::class, 'palestras']);
+
+Route::get('/video', [PalestrasController::class, 'video']);
