@@ -14,8 +14,12 @@ class PalestrasController extends Controller
         return view('palestras');
     }
 
-    public function video() {
-        return view('video');
+    public function showvideo() {
+        return view('showvideo');
+    }
+
+    public function confirma() {
+        return view('confirma');
     }
 
 }

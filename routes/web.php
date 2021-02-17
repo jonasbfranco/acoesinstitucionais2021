@@ -20,4 +20,8 @@ Route::get('/', [PalestrasController::class, 'index']);
 
 Route::get('/palestras', [PalestrasController::class, 'palestras']);
 
-Route::get('/video', [PalestrasController::class, 'video']);
+Route::get('/showvideo', [PalestrasController::class, 'showvideo']);
+
+Route::get('/confirma', [PalestrasController::class, 'confirma']);
+
+

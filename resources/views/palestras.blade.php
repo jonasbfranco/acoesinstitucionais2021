@@ -7,9 +7,15 @@
 <div class="container-login">
 
 
-<a class="btn btn-primary" href="/video">A IMPORTÂNCIA DA ATIVIDADE FÍSICA</a>
+<a class="btn btn-primary" href="/showvideo">A IMPORTÂNCIA DA ATIVIDADE FÍSICA</a>
 
+<a class="btn btn-primary" href="/showvideo">A IMPORTÂNCIA DA ATIVIDADE FÍSICA</a>
 
+<a class="btn btn-primary" href="/showvideo">A IMPORTÂNCIA DA ATIVIDADE FÍSICA</a>
+
+<a class="btn btn-primary" href="/showvideo">A IMPORTÂNCIA DA ATIVIDADE FÍSICA</a>
+
+<a class="btn btn-primary" href="/showvideo">A IMPORTÂNCIA DA ATIVIDADE FÍSICA</a>
 
 </div> <!-- Fim DIV Container Login -->
 
