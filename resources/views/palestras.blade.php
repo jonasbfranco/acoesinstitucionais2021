@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container-login">
+<div class="container-video">
 
 
 <a class="btn btn-primary" href="/showvideo">A IMPORTÂNCIA DA ATIVIDADE FÍSICA</a>

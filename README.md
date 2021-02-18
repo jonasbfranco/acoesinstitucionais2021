@@ -24,11 +24,66 @@
 - $ php artisan make:controller Site/BlogController --invokable
 ~~~
 
+### Migrations
+
+## Verificar status das migrations
+~~~php
+php artisan migrate:status
+~~~
+
+### Criar a Migration Funcionarios (controlar login)
+~~~php
+php artisan make:migration create_funcionarios_table 
+ou determinar nome da tabela
+php artisan make:migration create_funcionar_table --table=funcionarios
+~~~
+
+### Criar campo especifico em uma tabela
+~~~php
+php artisan make:migration add_nomecompleto_to_funcionarios_table
+
+inserir os campos no arquivo criado
+exemplo
+$table->string('nomecompleto');
+
+inserir campos para deletar também
+exemplo
+$table->dropColumn('nomecompleto');
+~~~
+
+### Apagar e recriar as migrations
+~~~php
+php artisan migrate:fresh
+~~~
+
+### Erro ao criar as migrations
+~~~php
+Resumindo as colunas do tipo string do Laravel vem com default 255 o que faz com que o tamanho exceda ao tamnho maxímo para o indíce, vá até sua migration e troque o lenght do campo com chave unique para 191 ou para o tamanho que preferir, por exemplo:
+
+$table->string('email', ['length' => 191])->unique();
+
+Você pode adicionar no seu arquivo AppServiceProvider.php dentro do método boot() a seguinte instrução para seu campo string ficar default e não precisar declarar em toda migration o tamanho do campo string:
+
+Schema::defaultStringLength(191);
+~~~
+
+## Site definicao migrations
+https://blog.especializati.com.br/criar-tabelas-laravel-migrations/
+
+
 ### Entrar no Tinker para testara  conexao com o banco laravel_do_zero (criado no MySQL)
 ~~~php
 - $ php artisan tinker
 - $ DB::connection()->getPdo();
 ~~~
+
+
+## Leitura Flex Box
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
+
+
+php artisan make:controller FuncionarioController
+php artisan make:model funcionario
 
 
 

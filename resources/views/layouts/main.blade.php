@@ -18,7 +18,7 @@
         @yield('content')
 
         <footer>
-            <p>Jonas B. Franco - TI - Colombo Agroidnsutria &copy; 2021</p>
+            <p>Jonas B. Franco - TI - Colombo Agroindustria &copy; 2021</p>
         </footer>
         <script src="js/script.js"></script>
     </body>
