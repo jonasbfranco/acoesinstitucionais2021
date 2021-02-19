@@ -6,6 +6,10 @@
 
 <div class="container-login">
 
+    @if(session('msg'))
+        <p class="msg">{{ session('msg') }}</p>
+    @endif
+
     <img class="img-login" src="img/logo.png" alt="">
     <h1>Ações Institucionais 2021</h1>
 

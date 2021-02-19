@@ -14,14 +14,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\PalestrasController;
+use App\Http\Controllers\FuncionarioController;
 
+// Route::get('/', [PalestrasController::class, 'index']);
 
-Route::get('/', [PalestrasController::class, 'index']);
+Route::get('/', PalestrasController::class)->name('home');
 
-Route::get('/palestras', [PalestrasController::class, 'palestras']);
+Route::post('palestras', [FuncionarioController::class, 'login'])->name('funcionario.login');
+
+//Route::get('/palestras', [PalestrasController::class, 'palestras']);
+
+Route::get('/cadastro', [PalestrasController::class, 'cadastro']);
 
 Route::get('/showvideo', [PalestrasController::class, 'showvideo']);
 
 Route::get('/confirma', [PalestrasController::class, 'confirma']);
+
+
+
+
+
+// Route::get('/', function() {
+//     return view('index');
+// });
+
 
 
