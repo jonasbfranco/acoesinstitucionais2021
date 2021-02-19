@@ -15,11 +15,6 @@ class PalestrasController extends Controller
         return view('welcome');
     }
 
-    public function cadastro() {
-        return view('cadastro');
-    }
-
-
     public function palestras() {
         return view('palestras');
     }

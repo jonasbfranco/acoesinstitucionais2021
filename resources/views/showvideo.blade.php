@@ -18,7 +18,7 @@
 
 
 <form action="/confirma" method="get">
-    <input id="teste" style="display:none;" type="submit" value="Confirmação do Cadastro" name="confirmar" class="w-100 btn btn-lg btn-primary mb-5">
+    <input id="teste" style="display:none;" type="submit" value="Ir a tela de confirmação " name="confirmar" class="w-100 btn btn-lg btn-primary mb-5">
     <!-- <button id="teste" style="display:none;" class="w-100 btn btn-lg btn-primary mb-5" type="submit" value="confirmar" name="confirmar">Confirmação do Cadastro</button> -->
 </form>
 

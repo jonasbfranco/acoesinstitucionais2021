@@ -16,19 +16,24 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PalestrasController;
 use App\Http\Controllers\FuncionarioController;
 
-// Route::get('/', [PalestrasController::class, 'index']);
 
-Route::get('/', PalestrasController::class)->name('home');
+Route::get('/', [PalestrasController::class, 'index'])->name('home');
 
-Route::post('palestras', [FuncionarioController::class, 'login'])->name('funcionario.login');
+//Route::get('/', PalestrasController::class)->name('home'); Este é para usar o __invoke
 
-//Route::get('/palestras', [PalestrasController::class, 'palestras']);
+Route::post('/palestras', [FuncionarioController::class, 'login'])->name('funcionario.login');
 
-Route::get('/cadastro', [PalestrasController::class, 'cadastro']);
+Route::get('/palestras', [PalestrasController::class, 'palestras']);
+
+Route::get('/cadastro', [FuncionarioController::class, 'cadastro']);
+
+Route::post('/cadastro', [FuncionarioController::class, 'salvando']);
 
 Route::get('/showvideo', [PalestrasController::class, 'showvideo']);
 
 Route::get('/confirma', [PalestrasController::class, 'confirma']);
+
+Route::get('/confirma', [FuncionarioController::class, 'confirmando']);
 
 
 

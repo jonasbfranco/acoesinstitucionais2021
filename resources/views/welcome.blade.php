@@ -4,6 +4,14 @@
 
 @section('content')
 
+    <?php
+        $cartao = $_GET['cartao'];
+    ?>
+
+    @if(session('msg'))
+        <p class="msg">{{ session('msg') }}</p>
+    @endif
+
 <div class="container-login">
     <div>
         <img class="img-login" src="img/logo.png" alt="">
@@ -12,7 +20,7 @@
         <form method="post" action="{{route('funcionario.login')}}">
         @csrf
         <div class="mb-3">
-            <input type="number" class="form-control" name="funcionario" id="ImputCartão" placeholder="Digite o número do seu cartão" require="required">
+            <input type="number" class="form-control" name="cartao" value="<?= $cartao ?>" id="ImputCartão" placeholder="Digite o número do seu cartão" required autofocus>
         </div>
         <button type="submit" class="btn btn-primary">Acessar</button>
         </form>
