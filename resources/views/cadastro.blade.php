@@ -6,10 +6,10 @@
 
 <div class="container-login">
 
-    <?php
-        $cartao = $_GET['cartao'];
-        $nome   = $_GET['nome'];
-    ?>
+    @php
+        @$cartao = $_GET['cartao'];
+        @$nome   = $_GET['nome'];
+    @endphp
 
     @if(session('msg'))
         <p class="msg">{{ session('msg') }}</p>
@@ -17,13 +17,13 @@
 
     <h1>Cadastro</h1>
 
-    <form action="/cadastro" method="post">
+    <form action="{{route('funcionario.salvar')}}" method="post">
     @csrf
     <div class="mb-3">
-        <input type="text" name="nome" value="<?= $nome ?>" class="form-control" id="ImputNome" placeholder="Digite seu nome completo" required autofocus>
+        <input type="text" name="nome" value="@php echo @$nome @endphp" class="form-control" id="ImputNome" placeholder="Digite seu nome completo" required autofocus>
     </div>
     <div class="mb-3">
-        <input type="number" name="cartao" value="<?= $cartao ?>" class="form-control" id="ImputCartao" placeholder="Digite o número do seu cartão" required>
+        <input type="number" name="cartao" value="@php echo @$cartao @endphp" class="form-control" id="ImputCartao" placeholder="Digite o número do seu cartão" required>
     </div>
     <div class="form-group mb-3">
             <select class="form-control" name="unidade" id="exampleFormControlSelect1">

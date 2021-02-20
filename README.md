@@ -1,4 +1,5 @@
 # COMANDOS PARA EXECUTAR DEPOIS DE CLONAR O PROJETO
+
 ```shell
 - $ composer install
 - $ php -r "copy('.env.example', '.env');"
@@ -10,37 +11,55 @@
 ```
 
 ### Configure o arquivo .env
-~~~php
-- DB_DATABASE=laravel_do_zero
-~~~
 
-### Criar o Controller Palestras
-~~~php
+```php
+- DB_DATABASE=laravel_do_zero
+```
+
+### Criar os Model
+
+```php
+- $ php artisan make:model Funcionario
+- $ php artisan make:model Video
+```
+
+### Criar os Controller
+
+```php
 - $ php artisan make:controller PalestrasController
-~~~
+- $ php artisan make:controller VideoController
+```
 
 ### Criar o Controller Blog (pagina estatica)
-~~~php
+
+```php
 - $ php artisan make:controller Site/BlogController --invokable
-~~~
+```
 
 ### Migrations
 
 ## Verificar status das migrations
-~~~php
-php artisan migrate:status
-~~~
+
+```php
+- $ php artisan migrate:status
+```
 
 ### Criar a Migration Funcionarios (controlar login)
-~~~php
-php artisan make:migration create_funcionarios_table 
+
+```php
+- $ php artisan make:migration create_videos_table
+- $ php artisan make:migration create_confirmacaos_table
+
+
+- $ php artisan make:migration create_funcionarios_table
 ou determinar nome da tabela
-php artisan make:migration create_funcionar_table --table=funcionarios
-~~~
+- $ php artisan make:migration create_funcionar_table --table=funcionarios
+```
 
 ### Criar campo especifico em uma tabela
-~~~php
-php artisan make:migration add_nomecompleto_to_funcionarios_table
+
+```php
+- $ php artisan make:migration add_nomecompleto_to_funcionarios_table
 
 inserir os campos no arquivo criado
 exemplo
@@ -49,15 +68,17 @@ $table->string('nomecompleto');
 inserir campos para deletar também
 exemplo
 $table->dropColumn('nomecompleto');
-~~~
+```
 
 ### Apagar e recriar as migrations
-~~~php
-php artisan migrate:fresh
-~~~
+
+```php
+- $ php artisan migrate:fresh
+```
 
 ### Erro ao criar as migrations
-~~~php
+
+```php
 Resumindo as colunas do tipo string do Laravel vem com default 255 o que faz com que o tamanho exceda ao tamnho maxímo para o indíce, vá até sua migration e troque o lenght do campo com chave unique para 191 ou para o tamanho que preferir, por exemplo:
 
 $table->string('email', ['length' => 191])->unique();
@@ -65,27 +86,27 @@ $table->string('email', ['length' => 191])->unique();
 Você pode adicionar no seu arquivo AppServiceProvider.php dentro do método boot() a seguinte instrução para seu campo string ficar default e não precisar declarar em toda migration o tamanho do campo string:
 
 Schema::defaultStringLength(191);
-~~~
+```
 
 ## Site definicao migrations
+
 https://blog.especializati.com.br/criar-tabelas-laravel-migrations/
 
+### Entrar no Tinker para testara conexao com o banco laravel_do_zero (criado no MySQL)
 
-### Entrar no Tinker para testara  conexao com o banco laravel_do_zero (criado no MySQL)
-~~~php
+```php
 - $ php artisan tinker
 - $ DB::connection()->getPdo();
-~~~
-
+```
 
 ## Leitura Flex Box
+
 https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
 
+-   $ php artisan make:controller FuncionarioController
+-   $ php artisan make:model funcionario
 
-php artisan make:controller FuncionarioController
-php artisan make:model funcionario
-
-
+### Laravel doc
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
@@ -100,13 +121,13 @@ php artisan make:model funcionario
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   [Simple, fast routing engine](https://laravel.com/docs/routing).
+-   [Powerful dependency injection container](https://laravel.com/docs/container).
+-   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+-   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+-   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+-   [Robust background job processing](https://laravel.com/docs/queues).
+-   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
@@ -122,17 +143,17 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 
 ### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+-   **[Vehikl](https://vehikl.com/)**
+-   **[Tighten Co.](https://tighten.co)**
+-   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+-   **[64 Robots](https://64robots.com)**
+-   **[Cubet Techno Labs](https://cubettech.com)**
+-   **[Cyber-Duck](https://cyber-duck.co.uk)**
+-   **[Many](https://www.many.co.uk)**
+-   **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+-   **[DevSquad](https://devsquad.com)**
+-   **[Curotec](https://www.curotec.com/)**
+-   **[OP.GG](https://op.gg)**
 
 ## Contributing
 

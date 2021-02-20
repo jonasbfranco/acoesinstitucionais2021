@@ -4,9 +4,9 @@
 
 @section('content')
 
-    <?php
-        $cartao = $_GET['cartao'];
-    ?>
+    @php
+        @$cartao = $_GET['cartao'];
+    @endphp
 
     @if(session('msg'))
         <p class="msg">{{ session('msg') }}</p>
@@ -20,7 +20,7 @@
         <form method="post" action="{{route('funcionario.login')}}">
         @csrf
         <div class="mb-3">
-            <input type="number" class="form-control" name="cartao" value="<?= $cartao ?>" id="ImputCartão" placeholder="Digite o número do seu cartão" required autofocus>
+            <input type="number" class="form-control" name="cartao" value="@php echo @$cartao @endphp" id="ImputCartão" placeholder="Digite o número do seu cartão" required autofocus>
         </div>
         <button type="submit" class="btn btn-primary">Acessar</button>
         </form>

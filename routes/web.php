@@ -17,23 +17,31 @@ use App\Http\Controllers\PalestrasController;
 use App\Http\Controllers\FuncionarioController;
 
 
-Route::get('/', [PalestrasController::class, 'index'])->name('home');
+Route::get('/', [FuncionarioController::class, 'index'])->name('home');
 
-//Route::get('/', PalestrasController::class)->name('home'); Este é para usar o __invoke
+Route::post('/', [FuncionarioController::class, 'login'])->name('funcionario.login');
 
-Route::post('/palestras', [FuncionarioController::class, 'login'])->name('funcionario.login');
+Route::get('/cadastro', [FuncionarioController::class, 'cadastrar']);
+
+Route::post('/cadastro', [FuncionarioController::class, 'salvando'])->name('funcionario.salvar');
+
+
+
+//Route::get('/', PalestrasController::class)->name('home'); Este é para usar o __invoke que sempre é executado
 
 Route::get('/palestras', [PalestrasController::class, 'palestras']);
-
-Route::get('/cadastro', [FuncionarioController::class, 'cadastro']);
-
-Route::post('/cadastro', [FuncionarioController::class, 'salvando']);
 
 Route::get('/showvideo', [PalestrasController::class, 'showvideo']);
 
 Route::get('/confirma', [PalestrasController::class, 'confirma']);
 
-Route::get('/confirma', [FuncionarioController::class, 'confirmando']);
+Route::post('/confirma', [PalestrasController::class, 'salvando'])->name('palestras.confirmar');
+
+
+
+
+
+Route::post('/confirma', [FuncionarioController::class, 'confirmando']);
 
 
 

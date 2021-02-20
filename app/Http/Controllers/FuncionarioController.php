@@ -8,7 +8,16 @@ use Illuminate\Http\Request;
 
 class FuncionarioController extends Controller
 {
-    
+
+
+    //=================================================================
+    // Funcao de redirecionamento a tela de login
+    //=================================================================
+    public function index() {
+        return view('welcome');
+    }
+
+
     //=================================================================
     // Funcao para efetuar o login
     //=================================================================
@@ -39,7 +48,7 @@ class FuncionarioController extends Controller
 
 
     //=================================================================
-    // Funcao para efetuar o logout 
+    // Funcao para efetuar o logout
     //=================================================================
     public function logout() {
         @session_start();
@@ -48,10 +57,15 @@ class FuncionarioController extends Controller
     } //Fim da function Logout
 
 
+
+
+
+
+
     //=================================================================
     // Funcao de redirecionamento a tela de cadastro
     //=================================================================
-    public function cadastro() {
+    public function cadastrar() {
         return view('cadastro');
     } // Fim da funcao de redireciomanento
 
@@ -68,12 +82,12 @@ class FuncionarioController extends Controller
         if ($unidade == 'Escolha sua unidade') {
             return redirect('/cadastro?cartao='.$cartao.'&nome='.$nome)->with('msg', 'Escolha sua Unidade!!!');
         }
-        
+
         if (funcionario::where('cartao', '=', $cartao)->first()) {
-          return redirect('/?cartao='.$cartao)->with('msg', $cartao.' cadastro existente!!!');  
+          return redirect('/?cartao='.$cartao)->with('msg', $cartao.' cadastro existente!!!');
         } else {
 
-        
+
 
         $cadfuncionario = new funcionario; //nome da model da tabela funcionario
 
@@ -88,11 +102,11 @@ class FuncionarioController extends Controller
 
         } //Fim do if
 
-    } //Fim da function cadastrar  
+    } //Fim da function cadastrar
 
 
     //=================================================================
-    // Funcao para cadastrar novo funcionario
+    // Funcao para confirmar Palestra
     //=================================================================
     public function confirmando(Request $request) {
 
@@ -103,12 +117,12 @@ class FuncionarioController extends Controller
         if (!empty($cartao)) {
             return redirect('/confirma')->with('msg', 'Confirmado com sucesso!!!');
         }
-        
+
         if (funcionario::where('cartao', '=', $cartao)->first()) {
-          return redirect('/?cartao='.$cartao)->with('msg', $cartao.' cadastro existente!!!');  
+          return redirect('/?cartao='.$cartao)->with('msg', $cartao.' cadastro existente!!!');
         } else {
 
-        
+
 
         $cadfuncionario = new funcionario; //nome da model da tabela funcionario
 

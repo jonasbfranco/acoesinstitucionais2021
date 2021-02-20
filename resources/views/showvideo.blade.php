@@ -4,6 +4,12 @@
 
 @section('content')
 
+{{--
+    fazer each para mostrar o video selecionado
+    colocar o tempo do video tambem em milesegundos
+    levar o id do video e o id do funcionario para a tabela confirmacao
+    /confirma?id=10
+--}}
 
 <div class="container-video">
     <div class="ratio ratio-16x9 mb-1">
@@ -35,7 +41,7 @@
         // setTimeout(carregar, 4000); //2 minutos
         setTimeout(carregar, 2000); //1 minutos
     });
-    
+
     function carregar() {
         // window.location.href = "/confirma";
         $('#teste').show();

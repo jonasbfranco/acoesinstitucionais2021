@@ -11,10 +11,6 @@ class PalestrasController extends Controller
         return view('welcome');
     }
 
-    public function index() {
-        return view('welcome');
-    }
-
     public function palestras() {
         return view('palestras');
     }

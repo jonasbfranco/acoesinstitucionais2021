@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFuncionariosTable extends Migration
+class CreateVideosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateFuncionariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('funcionarios', function (Blueprint $table) {
+        Schema::create('videos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->integer('cartao')->unsigned(); //aceita somente numeros positivos unique() é unico
-            $table->integer('unidade');
+            $table->text('duracao');
+            $table->string('caminho');
             $table->date('data');
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateFuncionariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('funcionarios');
+        Schema::dropIfExists('videos');
     }
 }

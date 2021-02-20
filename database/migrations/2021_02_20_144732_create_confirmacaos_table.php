@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFuncionariosTable extends Migration
+class CreateConfirmacaosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateFuncionariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('funcionarios', function (Blueprint $table) {
+        Schema::create('confirmacoes', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->integer('cartao')->unsigned(); //aceita somente numeros positivos unique() é unico
-            $table->integer('unidade');
+            $table->foreignId('funcionarios_id')->references('id')->on('funcionarios');
+            $table->foreignId('videos_id')->references('id')->on('videos');
             $table->date('data');
             $table->timestamps();
         });
@@ -30,6 +29,6 @@ class CreateFuncionariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('funcionarios');
+        Schema::dropIfExists('confirmacaos');
     }
 }
