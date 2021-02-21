@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PalestrasController;
 use App\Http\Controllers\FuncionarioController;
+use App\Http\Controllers\AdminController;
 
 
 Route::get('/', [FuncionarioController::class, 'index'])->name('home');
@@ -23,7 +24,7 @@ Route::post('/', [FuncionarioController::class, 'login'])->name('funcionario.log
 
 Route::get('/cadastro', [FuncionarioController::class, 'cadastrar']);
 
-Route::post('/cadastro', [FuncionarioController::class, 'salvando'])->name('funcionario.salvar');
+Route::post('/cadastro', [FuncionarioController::class, 'salvar'])->name('funcionario.salvar');
 
 
 
@@ -35,15 +36,17 @@ Route::get('/showvideo', [PalestrasController::class, 'showvideo']);
 
 Route::get('/confirma', [PalestrasController::class, 'confirma']);
 
-Route::post('/confirma', [PalestrasController::class, 'salvando'])->name('palestras.confirmar');
+//Route::post('/confirma', [PalestrasController::class, 'salvar'])->name('palestras.confirmar');
 
 
 
+Route::get('/admin', [AdminController::class, 'index']);
 
+Route::get('/admin/incluir', [AdminController::class, 'incluir']);
 
-Route::post('/confirma', [FuncionarioController::class, 'confirmando']);
+Route::get('/admin/editar/', [AdminController::class, 'editar']);
 
-
+Route::post('/admin', [AdminController::class, 'salvar'])->name('palestra.salvar');
 
 
 
