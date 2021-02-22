@@ -106,6 +106,14 @@ https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Alignin
 -   $ php artisan make:controller FuncionarioController
 -   $ php artisan make:model funcionario
 
+
+### php.ini
+post_max_size=6G
+upload_max_filesize=4G
+memory_limit = 8G
+
+
+
 ### Laravel doc
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
