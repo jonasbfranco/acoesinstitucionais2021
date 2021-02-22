@@ -1,0 +1,20 @@
+
+
+Administrativo
+
+admin
+  |____login
+	|_____Painel/Dashboard
+		|_______________Adicionar
+		|_______________Editar
+		|_______________Excluir
+		|_______________Sair
+
+
+App
+
+login
+  |____Palestras
+	|_________Confirmar
+			|_____Redirect
+				|________Palestras
