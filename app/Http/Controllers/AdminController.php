@@ -12,13 +12,12 @@ class AdminController extends Controller
         return view ('painel_admin.index_admin');
     }
 
-    public function incluir(){
-        return view ('painel_admin.incluir_editar_admin');
-
+    public function create(){
+        return view ('painel_admin.create_admin');
     }
 
     public function editar(){
-        return view ('painel_admin.incluir_editar_admin');
+        return view ('painel_admin.edit_admin');
     }
 
 
@@ -75,6 +74,18 @@ class AdminController extends Controller
 
 
 
+
+    //=================================================================
+    // Funcao para Editar Palestra
+    //=================================================================
+    public function edit($id) {
+
+        $editpalestra = video::findOrFail($id);
+
+        return view('painel_admin.edit_admin', ['editpalestra' => $editpalestra]);
+
+
+    }
 
 
 

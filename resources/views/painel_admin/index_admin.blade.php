@@ -1,4 +1,4 @@
-@extends('layouts.main_admin')
+@extends('layouts.main')
 
 @section('title', 'Ações Institucionais 2021 - Painel Administrador')
 
@@ -15,7 +15,7 @@
 
     <h1>Painel do Administrador</h1>
 
-    <a href="/admin/incluir?tipo=incluir"><button class="btn btn-success">Incluir</button></a>
+    <a href="/admin/create"><button class="btn btn-success">Incluir</button></a>
 
     <table class="table">
         <thead>
@@ -34,7 +34,7 @@
             <td>40000</td>
             <td>teste</td>
             <td>22/02/2021</td>
-            <td><a href="/admin/editar?tipo=editar"><button class="btn btn-primary">Editar</button></a></td>
+            <td><a href="/admin/edit"><button class="btn btn-primary">Editar</button></a></td>
             <td><a href="/admin/excluir"><button class="btn btn-danger">Excluir</button></a></td>
             </tr>
         </tbody>

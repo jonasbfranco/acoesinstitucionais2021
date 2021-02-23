@@ -42,9 +42,9 @@ Route::get('/confirma', [PalestrasController::class, 'confirma']);
 
 Route::get('/admin', [AdminController::class, 'index']);
 
-Route::get('/admin/incluir', [AdminController::class, 'incluir']);
+Route::get('/admin/create', [AdminController::class, 'create']);
 
-Route::get('/admin/editar/', [AdminController::class, 'editar']);
+Route::get('/admin/edit/{id}', [AdminController::class, 'edit']);
 
 Route::post('/admin', [AdminController::class, 'salvar'])->name('palestra.salvar');
 
