@@ -32,7 +32,9 @@
         <button type="submit" class="btn btn-success">Cadastrar</button>
     </form>
 
-    <a href="/admin"><button class="btn btn-danger">Cancelar</button></a>
+    <a href="{{ url()->previous() }}"><button class="btn btn-danger">Cancelar</button></a>
+
+    {{-- <a href="/admin"><button class="btn btn-danger">Cancelar</button></a> --}}
 
 
 

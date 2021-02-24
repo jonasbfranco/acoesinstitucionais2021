@@ -9,7 +9,12 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function index() {
-        return view ('painel_admin.index_admin');
+
+        //$showpalestras = video::all(); //para mostrar todos
+
+        $showpalestras = video::paginate(3); //para paginar
+
+        return view ('painel_admin.index_admin', ['showpalestras' => $showpalestras]);
     }
 
     public function create(){

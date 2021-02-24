@@ -29,16 +29,21 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($showpalestras as $showpalestra)
             <tr>
-            <td>A IMPORTÂNCIA DA ATIVIDADE FÍSICA</td>
-            <td>40000</td>
-            <td>teste</td>
-            <td>22/02/2021</td>
-            <td><a href="/admin/edit"><button class="btn btn-primary">Editar</button></a></td>
-            <td><a href="/admin/excluir"><button class="btn btn-danger">Excluir</button></a></td>
+            <td>{{ $showpalestra->titulo }}</td>
+            <td>{{ $showpalestra->duracao }}</td>
+            <td>{{ $showpalestra->nome_video }}</td>
+            <td>{{ $showpalestra->data_liberacao }}</td>
+            <td><a href="/admin/edit/{{ $showpalestra->id }}"><button class="btn btn-primary">Editar</button></a></td>
+            <td><a href="/admin/excluir/{{ $showpalestra->id }}"><button class="btn btn-danger">Excluir</button></a></td>
             </tr>
+            @endforeach
         </tbody>
     </table>
+
+    {!! $showpalestras->links() !!}
+
 
     <p>No campo duração, verificar o total de minutos do video e multiplicar por 2000, o resultado é o valor que sera incluido no campo duração.</p>
     <p>Exemplo: Video de 15 minutos, 15x2000 = 30000</p>
