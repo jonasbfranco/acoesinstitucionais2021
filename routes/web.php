@@ -46,6 +46,8 @@ Route::get('/admin/create', [AdminController::class, 'create']);
 
 Route::get('/admin/edit/{id}', [AdminController::class, 'edit']);
 
+Route::delete('/admin/delete/{id}', [AdminController::class, 'destroy']);
+
 Route::post('/admin', [AdminController::class, 'salvar'])->name('palestra.salvar');
 
 

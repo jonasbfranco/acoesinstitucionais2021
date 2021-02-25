@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+
+    //=================================================================
+    // Funcao para mostrar todas as Palestra
+    //=================================================================
     public function index() {
 
         //$showpalestras = video::all(); //para mostrar todos
@@ -91,6 +95,32 @@ class AdminController extends Controller
 
 
     }
+
+
+
+    //=================================================================
+    // Funcao para deletrar uma Palestra
+    //=================================================================
+    public function destroy($id) {
+
+        $showpalestras = video::findOrFail($id)->delete(); //para deletar
+
+        return redirect('/admin')->with('msg', 'Palestra excluída com sucesso!!!');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
