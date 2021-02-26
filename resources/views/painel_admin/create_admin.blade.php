@@ -25,7 +25,7 @@
             <input type="date" name="data_liberacao" value="@php echo @$data @endphp" class="form-control" id="data" placeholder="Digite a data de liberação" required>
         </div>
         <div class="mb-3">
-            <input type="file" name="video" value="@php echo @$video @endphp" class="form-control-file" id="video"  required>
+            <input type="file" name="nome_video" value="@php echo @$video @endphp" class="form-control-file" id="nome_video"  required>
         </div>
 
 

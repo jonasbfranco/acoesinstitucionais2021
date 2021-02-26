@@ -10,4 +10,7 @@ class funcionario extends Model
     // se nao for usar migrations
     // public $timestamps = false;
     use HasFactory;
+
+    protected $guarded = [];
+
 }

@@ -23,15 +23,15 @@
             </div>
             --}}
             <div class="mb-3">
-                <input type="date" name="data_liberacao" value="{{ $editpalestra->data }}" class="form-control" id="data" placeholder="Digite a data de liberação" required>
+                <input type="date" name="data_liberacao" value="{{ $editpalestra->data_liberacao }}" class="form-control" id="data" placeholder="Digite a data de liberação" required>
             </div>
             <div class="mb-3">
-                <input type="file" name="video" value="" class="form-control-file" id="video"  required>
+                <input type="file" name="nome_video" class="form-control-file" id="nome_video">
                 <img src="/video/{{ $editpalestra->nome_video}}" alt="{{ $editpalestra->titulo}}" class="img-preview">
             </div>
 
 
-            <button type="submit" class="btn btn-success">Editar</button>
+            <button type="submit" class="btn btn-success">Editar Palestra</button>
         </form>
 
         <a href="/admin"><button class="btn btn-danger">Cancelar</button></a>

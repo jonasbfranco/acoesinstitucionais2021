@@ -19,6 +19,7 @@ class AdminController extends Controller
         $showpalestras = video::paginate(3); //para paginar
 
         return view ('painel_admin.index_admin', ['showpalestras' => $showpalestras]);
+
     }
 
     public function create(){
@@ -49,9 +50,9 @@ class AdminController extends Controller
         //$video      = $request->video;
 
         // Video Upload
-        if($request->hasFile('video') && $request->file('video')->isValid()) {
+        if($request->hasFile('nome_video') && $request->file('nome_video')->isValid()) {
 
-            $requestVideo = $request->video;
+            $requestVideo = $request->titulo;
 
             $extension = $requestVideo->extension();
 
@@ -61,7 +62,7 @@ class AdminController extends Controller
 
             //Storage::putFile('public', $requestVideo);
 
-            $cadpalestra->nome_video = $videoName;
+            $cadpalestra->nome_video = '$videoName';
 
         }
 
@@ -72,6 +73,7 @@ class AdminController extends Controller
             $path = public_path().'/video/';
             return $file->move($path, $filename);
         }*/
+
 
         $cadpalestra->save();
 
@@ -96,6 +98,41 @@ class AdminController extends Controller
 
     }
 
+    //=================================================================
+    // Funcao para Salvar Edit da Palestra
+    //=================================================================
+    public function update(Request $request) {
+
+        $data = $request->all();
+
+        // Video Upload
+        if($request->hasFile('nome_video') && $request->file('nome_video')->isValid()) {
+
+            $requestVideo = $request->nome_video;
+
+            $extension = $requestVideo->extension();
+
+            $videoName = md5($requestVideo->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestVideo->move(public_path('video'), $videoName);
+
+            //Storage::putFile('public', $requestVideo);
+
+            $data['nome_video'] = $videoName;
+
+        }
+        echo "<pre>";
+        var_dump($data);
+        echo "</pre>";
+
+        video::findOrFail($request->id)->update($data);
+        //video::findOrFail($request->id)->update($request->all());
+
+        return redirect('/admin')->with('msg', 'Palestra editada com sucesso!!!');
+
+
+    }
+
 
 
     //=================================================================
@@ -103,7 +140,7 @@ class AdminController extends Controller
     //=================================================================
     public function destroy($id) {
 
-        $showpalestras = video::findOrFail($id)->delete(); //para deletar
+        video::findOrFail($id)->delete(); //para deletar
 
         return redirect('/admin')->with('msg', 'Palestra excluída com sucesso!!!');
     }
