@@ -52,7 +52,7 @@ class AdminController extends Controller
         // Video Upload
         if($request->hasFile('nome_video') && $request->file('nome_video')->isValid()) {
 
-            $requestVideo = $request->titulo;
+            $requestVideo = $request->nome_video;
 
             $extension = $requestVideo->extension();
 
@@ -62,7 +62,7 @@ class AdminController extends Controller
 
             //Storage::putFile('public', $requestVideo);
 
-            $cadpalestra->nome_video = '$videoName';
+            $cadpalestra->nome_video = $videoName;
 
         }
 

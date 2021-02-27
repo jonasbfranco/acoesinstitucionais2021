@@ -39,7 +39,7 @@
                     <form action="/admin/delete/{{ $showpalestra->id }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i>Excluir</button>
+                        <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i> Excluir</button>
                     </form>
                 </tr>
                 @endforeach
