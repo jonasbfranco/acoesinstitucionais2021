@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\usuario;
 use App\Models\video;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\Storage;
@@ -9,16 +10,64 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
 
+    public function index() {
+        return view ('painel_admin.index_admin');
+    }
+
+    //=================================================================
+    // Funcao para efetuar o login e mostrar todas as Palestras
+    //=================================================================
+    public function dashboard(Request $request) {
+
+        $nome = $request->nome;
+        $senha = $request->senha;
+
+
+        $usuario = usuario::where('nome', '=', $nome)->where('senha', '=', $senha)->first();
+
+        if(@$usuario->id != null) {
+            @session_start();
+            $_SESSION['id']       = $usuario->id;
+            $_SESSION['nome']     = $usuario->nome;
+            $_SESSION['senha']    = $usuario->cartao;
+            $_SESSION['email']    = $usuario->unidade;
+
+            if($_SESSION['nome'] != null) {
+                //$showpalestras = video::all(); //para mostrar todos
+                $showpalestras = video::paginate(3); //para paginar
+                return view ('painel_admin.dashboard_admin', ['showpalestras' => $showpalestras]);
+            }
+
+        } else {
+            // echo "<script language='javascript'> window.alert('Dados Incorretos!')</script>";
+            // return view('/cadastro');
+            return redirect('/admin?nome='.$nome)->with('msg', $nome.' não encontramos seu cadastro, fale com o Administrador!!!');
+        }
+
+    } //Fim da function Dashboard/Login
+
+
+    //=================================================================
+    // Funcao para efetuar o logout
+    //=================================================================
+    public function logout() {
+        @session_start();
+        @session_destroy();
+        return view('welcome');
+    } //Fim da function Logout
+
+
+
     //=================================================================
     // Funcao para mostrar todas as Palestra
     //=================================================================
-    public function index() {
+    public function dashboardd() {
 
         //$showpalestras = video::all(); //para mostrar todos
 
         $showpalestras = video::paginate(3); //para paginar
 
-        return view ('painel_admin.index_admin', ['showpalestras' => $showpalestras]);
+        return view ('painel_admin.dashboard_admin', ['showpalestras' => $showpalestras]);
 
     }
 

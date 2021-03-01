@@ -39,8 +39,9 @@ Route::get('/confirma', [PalestrasController::class, 'confirma']);
 //Route::post('/confirma', [PalestrasController::class, 'salvar'])->name('palestras.confirmar');
 
 
-
 Route::get('/admin', [AdminController::class, 'index']);
+
+Route::post('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');;
 
 Route::get('/admin/create', [AdminController::class, 'create']);
 
