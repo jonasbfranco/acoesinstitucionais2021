@@ -4,37 +4,41 @@
 
 @section('content')
 
-<div class="container-login">
+<div class="container-fluid">
 
-    <h1>Painel Inclusão</h1>
+    <p class="dash-titulo">Painel Inclusão</p>
 
-    <form action="{{route('palestra.salvar')}}" method="post" enctype="multipart/form-data">
-        @csrf
-        <div class="mb-3">
-            <input type="text" name="titulo" value="@php echo @$titulo @endphp" class="form-control" id="titulo" placeholder="Digite o titulo do video" required autofocus>
-        </div>
-        <div class="mb-3">
-            <input type="number" name="duracao" value="@php echo @$duracao @endphp" class="form-control" id="duracao" placeholder="Digite o tempo de duração" required>
-        </div>
-        {{--
-        <div class="mb-3">
-            <input type="text" name="nome_video" value="@php echo @$nome @endphp" class="form-control" id="nome" placeholder="Digite o nome do video" required>
-        </div>
-        --}}
-        <div class="mb-3">
-            <input type="date" name="data_liberacao" value="@php echo @$data @endphp" class="form-control" id="data" placeholder="Digite a data de liberação" required>
-        </div>
-        <div class="mb-3">
-            <input type="file" name="nome_video" value="@php echo @$video @endphp" class="form-control-file" id="nome_video"  required>
-        </div>
+    <div class="container-create-edit">
+
+        <form action="{{route('palestra.salvar')}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="mb-3">
+                <input type="text" name="titulo" value="@php echo @$titulo @endphp" class="form-control" id="titulo" placeholder="Digite o titulo do video" required autofocus>
+            </div>
+            <div class="mb-3">
+                <input type="number" name="duracao" value="@php echo @$duracao @endphp" class="form-control" id="duracao" placeholder="Digite o tempo de duração" required>
+            </div>
+            {{--
+            <div class="mb-3">
+                <input type="text" name="nome_video" value="@php echo @$nome @endphp" class="form-control" id="nome" placeholder="Digite o nome do video" required>
+            </div>
+            --}}
+            <div class="mb-3">
+                <input type="date" name="data_liberacao" value="@php echo @$data @endphp" class="form-control" id="data" placeholder="Digite a data de liberação" required>
+            </div>
+            <div class="mb-3">
+                <input type="file" name="nome_video" value="@php echo @$video @endphp" class="form-control-file" id="nome_video"  required>
+            </div>
 
 
-        <button type="submit" class="btn btn-success">Cadastrar</button>
-    </form>
+            <button type="submit" class="btn btn-success btn-create-edit progress-ajax"><i class="fas fa-save icon"></i> Salvar</button>
+        </form>
 
-    <a href="{{ url()->previous() }}"><button class="btn btn-danger">Cancelar</button></a>
+        <a href="{{ url()->previous() }}"><button class="btn btn-danger btn-create-edit"><i class="fas fa-ban icon"></i> Cancelar</button></a>
 
-    {{-- <a href="/admin"><button class="btn btn-danger">Cancelar</button></a> --}}
+        {{-- <a href="/admin"><button class="btn btn-danger">Cancelar</button></a> --}}
+
+        </div> {{-- Fim do Container --}}
 
 
 
@@ -44,6 +48,8 @@
 
 
 </div> <!-- Fim DIV Container Login -->
+
+
 
 @endsection
 

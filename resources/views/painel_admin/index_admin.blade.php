@@ -14,8 +14,8 @@
 
 <div class="container-login">
     <div>
-        <img class="img-login" src="img/logo.png" alt="">
-        <h1>Ações Institucionais 2021 - Login</h1>
+        <img class="img-login" src="/img/logo.png" alt="">
+        <p class="text-titulo">Ações Institucionais 2021</p>
 
         <form method="post" action="{{route('admin.dashboard')}}">
         @csrf
@@ -25,7 +25,7 @@
         <div class="mb-3">
             <input type="password" class="form-control" name="senha" id="ImputSenha" placeholder="Digite sua senha" required>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary button-customize"><i class="fas fa-user icon"></i> Login</button>
         </form>
     </div>
 </div> <!-- Fim DIV Container Login -->

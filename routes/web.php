@@ -41,7 +41,9 @@ Route::get('/confirma', [PalestrasController::class, 'confirma']);
 
 Route::get('/admin', [AdminController::class, 'index']);
 
-Route::post('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');;
+Route::post('/admin/dashboard', [AdminController::class, 'dashboard']);
+
+Route::get('/admin/dashboard', [AdminController::class, 'show'])->name('admin.dashboard');
 
 Route::get('/admin/create', [AdminController::class, 'create']);
 
@@ -52,6 +54,8 @@ Route::put('/admin/update/{id}', [AdminController::class, 'update']);
 Route::delete('/admin/delete/{id}', [AdminController::class, 'destroy']);
 
 Route::post('/admin', [AdminController::class, 'salvar'])->name('palestra.salvar');
+
+Route::post('/admin/logout', [AdminController::class, 'logout']);
 
 
 

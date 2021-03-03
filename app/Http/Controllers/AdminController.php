@@ -34,7 +34,7 @@ class AdminController extends Controller
 
             if($_SESSION['nome'] != null) {
                 //$showpalestras = video::all(); //para mostrar todos
-                $showpalestras = video::paginate(3); //para paginar
+                $showpalestras = video::paginate(6); //para paginar
                 return view ('painel_admin.dashboard_admin', ['showpalestras' => $showpalestras]);
             }
 
@@ -53,7 +53,7 @@ class AdminController extends Controller
     public function logout() {
         @session_start();
         @session_destroy();
-        return view('welcome');
+        return view('painel_admin.index_admin');
     } //Fim da function Logout
 
 
@@ -61,11 +61,11 @@ class AdminController extends Controller
     //=================================================================
     // Funcao para mostrar todas as Palestra
     //=================================================================
-    public function dashboardd() {
+    public function show() {
 
         //$showpalestras = video::all(); //para mostrar todos
 
-        $showpalestras = video::paginate(3); //para paginar
+        $showpalestras = video::paginate(6); //para paginar
 
         return view ('painel_admin.dashboard_admin', ['showpalestras' => $showpalestras]);
 
@@ -126,7 +126,7 @@ class AdminController extends Controller
 
         $cadpalestra->save();
 
-        return redirect('/admin')->with('msg', 'Palestra '.$titulo.' cadastrada com sucesso!!!');
+        return redirect('/admin/dashboard')->with('msg', 'Palestra '.$titulo.' cadastrada com sucesso!!!');
 
         //} //Fim do if
 
@@ -177,7 +177,7 @@ class AdminController extends Controller
         video::findOrFail($request->id)->update($data);
         //video::findOrFail($request->id)->update($request->all());
 
-        return redirect('/admin')->with('msg', 'Palestra editada com sucesso!!!');
+        return redirect('/admin/dashboard')->with('msg', 'Palestra editada com sucesso!!!');
 
 
     }
@@ -196,52 +196,4 @@ class AdminController extends Controller
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public function storeeee(Request $request){
-
-      $event = new Event;
-
-      $event->title = $request->title;
-      $event->date = $request->date;
-      $event->city = $request->city;
-      $event->private = $request->private;
-      $event->description = $request->description;
-      $event->items = $request->items;
-
-      // Image Upload
-      if($request->hasFile('image') && $request->file('image')->isValid()) {
-
-         $requestImage = $request->image;
-
-         $extension = $requestImage->extension();
-
-         $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
-
-         $requestImage->move(public_path('img/events'), $imageName);
-
-         $event->image = $imageName;
-
-      }
-
-      $user = auth()->user();
-      $event->user_id = $user->id;
-
-      $event->save();
-
-      return redirect('/')->with('msg', 'Evento criado com sucesso!');
-
-   }
 }

@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="/css/bootstrap.min.css">
 
         <!-- CSS -->
-        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link rel="stylesheet" href="/css/style.css">
 
         <!-- FontAwesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" />
@@ -23,6 +23,7 @@
         <footer>
             <p>Jonas B. Franco - TI - Colombo Agroindustria &copy; 2021</p>
         </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>

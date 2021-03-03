@@ -4,30 +4,44 @@
 
 @section('content')
 
-<div class="container-login">
+
 
     @php
-        $logado = $_SESSION['nome'];
+
+        @session_start();
+
+        @$logado = $_SESSION['nome'];
+
+        if (!isset($logado)) {
+            return redirect('/admin')->with('msg', 'Vizualização não autorizada, fale com o Administrador!!!');
+        }
+
     @endphp
 
-    @if(session('msg'))
-        <p class="msg">{{ session('msg') }}</p>
-    @endif
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
         <div class="container-fluid">
-            <a class="navbar-brand">{{ $logado }}, bem vindo.</a>
-            <form class="d-flex" method="post">
-                <button class="btn btn-danger" type="submit">Sair</button>
+            <p class="navbar-user">{{ $logado }}, bem vindo.</p>
+            <form action="/admin/logout" method="post" class="d-flex">
+                @csrf
+                <button class="btn btn-danger" type="submit">Sair<i class="fas fa-sign-out-alt icon"></i></button>
             </form>
         </div>
 
     </nav>
 
+    <div class="container-fluid">
 
-    <h1>Painel do Administrador</h1>
+    @if(session('msg'))
+        <p class="msg">{{ session('msg') }}</p>
+    @endif
 
-    <a href="/admin/create"><button class="btn btn-success"><i class="fas fa-plus"></i> Incluir</button></a>
+
+
+    <p class="dash-titulo">Dashboard</p>
+
+    <a href="/admin/create"><button class="btn btn-success"><i class="fas fa-plus icon"></i>Incluir</button></a>
 
 
         <table class="table">
@@ -48,26 +62,21 @@
                 <td>{{ $showpalestra->duracao }}</td>
                 <td>{{ $showpalestra->nome_video }}</td>
                 <td>{{ $showpalestra->data_liberacao }}</td>
-                <td><a href="/admin/edit/{{ $showpalestra->id }}"><button class="btn btn-primary"><i class="far fa-edit"></i> Editar</button></a></td>
+                <td><a href="/admin/edit/{{ $showpalestra->id }}"><button class="btn btn-primary"><i class="far fa-edit icon"></i>Editar</button></a></td>
                 <td>
                     <form action="/admin/delete/{{ $showpalestra->id }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i> Excluir</button>
+                        <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt icon"></i>Excluir</button>
                     </form>
                 </tr>
                 @endforeach
             </tbody>
         </table>
 
-
-        {!! $showpalestras->links() !!}
-
-
-        <p>No campo duração, verificar o total de minutos do video e multiplicar por 2000, o resultado é o valor que sera incluido no campo duração.</p>
-        <p>Exemplo: Video de 15 minutos, 15x2000 = 30000</p>
-
-
+        <div class="pages">
+            {!! $showpalestras->links() !!}
+        </div>
 
 
 </div> <!-- Fim DIV Container Login -->
