@@ -25,7 +25,10 @@
         <div class="mb-3">
             <input type="password" class="form-control" name="senha" id="ImputSenha" placeholder="Digite sua senha" required>
         </div>
-        <button type="submit" class="btn btn-primary button-customize"><i class="fas fa-user icon"></i> Login</button>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary button-customize"><i class="fas fa-user icon"></i> Login</button>
+        </div>
         </form>
     </div>
 </div> <!-- Fim DIV Container Login -->
