@@ -1,0 +1,195 @@
+/***** Font Google *****/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap");
+
+$negro: #111111;
+$blanco: #fefefe;
+$grisOscuro: #222222;
+$grisClaro: #c8c8c8;
+$grisClaroHover: #acabab;
+$azul: #3e60e9;
+$azulHover: #254be6;
+
+$sombraDark: 10px 10px 20px rgba(170, 170, 170, 0.16);
+$sombraLight: 10px 10px 20px rgba(0, 0, 0, 0.16);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    background: #f1f1f1;
+    font-family: "Montserrat", sans-serif;
+    transition: 0.3s ease all;
+
+    &.dark {
+        background: $negro;
+    }
+}
+
+// ----- ----- ----- ----- ----- Switch ----- ----- ----- ----- -----
+.switch {
+    background-color: #343d5b;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    &::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background: #f1f1f1;
+        top: 0;
+        left: 0;
+        right: unset;
+        border-radius: 100px;
+        transition: 0.3s ease all;
+        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+    }
+    &.active {
+        background: orange;
+        color: #000;
+        &::after {
+            right: 0;
+            left: unset;
+        }
+    }
+    span {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        display: block;
+        background: nome;
+        color: #fff;
+    }
+}
+
+// ----- ----- ----- ----- ----- JONAS ----- ----- ----- ----- -----
+
+.container-login {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: 97%;
+    background: #f1f1f1;
+    body.dark & {
+        background: $negro;
+    }
+}
+
+.container-login div {
+    width: 100%;
+    max-width: 468px;
+    padding: 0 15px;
+    margin: auto;
+    text-align: center !important;
+}
+
+.img-login {
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+}
+
+.text-titulo {
+    color: rebeccapurple;
+    font-size: 30px !important;
+    font-weight: 700 !important;
+}
+
+.icon {
+    padding: 5px;
+}
+
+.button-customize {
+    width: 100%;
+}
+
+.btn {
+    text-align: left !important;
+    font-weight: 700;
+}
+
+.navbar-user {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+}
+
+.pages {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 10px;
+}
+
+.pages .flex {
+    padding-bottom: 15px !important;
+}
+
+.pages .relative {
+    text-decoration: none !important;
+}
+.w-5 {
+    width: 20px !important;
+    text-decoration: none;
+}
+
+.dash-titulo {
+    color: #000;
+    font-size: 40px !important;
+    font-weight: 700 !important;
+    padding: 15px 0 0 0;
+}
+
+.container-create-edit {
+    background-color: #f5f5f5;
+    width: 100%;
+    max-width: 468px;
+    text-align: left !important;
+}
+
+.btn-create-edit {
+    width: 50%;
+    max-width: 468px;
+    margin-bottom: 10px;
+}
+
+.video-preview {
+    width: 250px;
+    margin: 10px 0;
+}
+
+.bar-progress {
+    margin-bottom: 15px;
+}
+
+.msg {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+footer p {
+    position: fixed;
+    margin-bottom: 5px;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    text-align: center;
+    color: #7f8c8d;
+}
