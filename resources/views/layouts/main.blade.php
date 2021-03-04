@@ -15,6 +15,9 @@
         <!-- FontAwesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" />
 
+        <!-- Upload Progress Bar -->
+        <script src="http://malsup.github.com/jquery.form.js"></script>
+
 
     </head>
     <body>

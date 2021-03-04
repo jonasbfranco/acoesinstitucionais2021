@@ -41,7 +41,7 @@
             </div>
             <br />
 
-            <button type="submit" name="salvar" class="btn btn-success btn-create-edit progress-ajax"><i class="fas fa-save icon"></i> Salvar</button>
+            <button type="submit" name="upload" class="btn btn-success btn-create-edit progress-ajax"><i class="fas fa-save icon"></i> Salvar</button>
         </form>
 
         <a href="{{ url()->previous() }}"><button class="btn btn-danger btn-create-edit"><i class="fas fa-ban icon"></i> Cancelar</button></a>

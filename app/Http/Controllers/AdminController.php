@@ -89,7 +89,7 @@ class AdminController extends Controller
     public function salvar(Request $request) {
 
         $rules = array (
-            'nome_video' => 'image|max:819200 '
+            'file' => 'video|max:819200 '
         );
 
         $error = Validator::make($request->all(), $rules);
@@ -139,6 +139,14 @@ class AdminController extends Controller
 
 
         $cadpalestra->save();
+
+        $output = array(
+         'success' => 'Image uploaded successfully',
+         'image'  => '<img src="/video/'.$videoName.'" class="video-preview" />'
+        );
+
+        //return response()->json($output);
+
 
         return redirect('/admin/dashboard')->with('msg', 'Palestra '.$titulo.' cadastrada com sucesso!!!');
 
