@@ -33,13 +33,11 @@
 
     <div class="container-fluid">
 
+    <p class="dash-titulo">Dashboard</p>
+
     @if(session('msg'))
         <p class="msg">{{ session('msg') }}</p>
     @endif
-
-
-
-    <p class="dash-titulo">Dashboard</p>
 
     <a href="/admin/create"><button class="btn btn-success"><i class="fas fa-plus icon"></i>Incluir</button></a>
 
@@ -49,7 +47,7 @@
                 <tr>
                 <th scope="col">Titulo</th>
                 <th scope="col">Duracao</th>
-                <th scope="col">Nome</th>
+                <th scope="col">Caminho do video</th>
                 <th scope="col">Data da Liberação</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Excluir</th>
@@ -60,7 +58,7 @@
                 <tr>
                 <td>{{ $showpalestra->titulo }}</td>
                 <td>{{ $showpalestra->duracao }}</td>
-                <td>{{ $showpalestra->nome_video }}</td>
+                <td>{{ $showpalestra->caminho_video }}</td>
                 <td>{{ $showpalestra->data_liberacao }}</td>
                 <td><a href="/admin/edit/{{ $showpalestra->id }}"><button class="btn btn-primary"><i class="far fa-edit icon"></i>Editar</button></a></td>
                 <td>

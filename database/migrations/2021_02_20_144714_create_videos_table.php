@@ -17,9 +17,8 @@ class CreateVideosTable extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('duracao', 5);
-            $table->string('nome_video');
+            $table->string('caminho_video');
             $table->date('data_liberacao');
-            $table->date('data');
             $table->timestamps();
         });
     }

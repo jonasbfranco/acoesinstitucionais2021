@@ -53,7 +53,7 @@ Route::put('/admin/update/{id}', [AdminController::class, 'update']);
 
 Route::delete('/admin/delete/{id}', [AdminController::class, 'destroy']);
 
-Route::post('/admin', [AdminController::class, 'salvar'])->name('palestra.salvar');
+Route::post('/admin', [AdminController::class, 'store'])->name('palestra.salvar');
 
 Route::post('/admin/logout', [AdminController::class, 'logout']);
 

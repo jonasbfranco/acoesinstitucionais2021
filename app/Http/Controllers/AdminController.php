@@ -43,7 +43,7 @@ class AdminController extends Controller
         } else {
             // echo "<script language='javascript'> window.alert('Dados Incorretos!')</script>";
             // return view('/cadastro');
-            return redirect('/admin?nome='.$nome)->with('msg', $nome.' não encontramos seu cadastro, fale com o Administrador!!!');
+            return redirect('/admin?nome='.$nome)->with('msg', 'Dados incorretos!!!');
         }
 
     } //Fim da function Dashboard/Login
@@ -86,19 +86,7 @@ class AdminController extends Controller
     //=================================================================
     // Funcao para confirmar Palestra
     //=================================================================
-    public function salvar(Request $request) {
-
-        $rules = array (
-            'file' => 'video|max:819200 '
-        );
-
-        $error = Validator::make($request->all(), $rules);
-
-        if($error->fails())
-        {
-            return response()->json(['errors' => $error->errors()->all()]);
-        }
-
+    public function store(Request $request) {
 
         $titulo = $request->titulo;
 
@@ -106,51 +94,12 @@ class AdminController extends Controller
 
         $cadpalestra->titulo            = $request->titulo;
         $cadpalestra->duracao           = $request->duracao;
-        //$cadpalestra->nome_video        = $request->nome_video;
+        $cadpalestra->caminho_video     = $request->caminho_video;
         $cadpalestra->data_liberacao    = $request->data_liberacao;
-        $cadpalestra->data              = now();
-        //$cadpalestra->move(public_path('video'));
-        //$video      = $request->video;
-
-        // Video Upload
-        if($request->hasFile('nome_video') && $request->file('nome_video')->isValid()) {
-
-            $requestVideo = $request->nome_video;
-
-            $extension = $requestVideo->extension();
-
-            $videoName = md5($requestVideo->getClientOriginalName() . strtotime("now")) . "." . $extension;
-
-            $requestVideo->move(public_path('video'), $videoName);
-
-            //Storage::putFile('public', $requestVideo);
-
-            $cadpalestra->nome_video = $videoName;
-
-        }
-
-        /*if(Request::hasFile('video')){
-
-            $file = Request::file('video');
-            $filename = $file->getClientOriginalName();
-            $path = public_path().'/video/';
-            return $file->move($path, $filename);
-        }*/
-
 
         $cadpalestra->save();
 
-        $output = array(
-         'success' => 'Image uploaded successfully',
-         'image'  => '<img src="/video/'.$videoName.'" class="video-preview" />'
-        );
-
-        //return response()->json($output);
-
-
         return redirect('/admin/dashboard')->with('msg', 'Palestra '.$titulo.' cadastrada com sucesso!!!');
-
-        //} //Fim do if
 
     } //Fim da function salvar
 
@@ -213,7 +162,7 @@ class AdminController extends Controller
 
         video::findOrFail($id)->delete(); //para deletar
 
-        return redirect('/admin')->with('msg', 'Palestra excluída com sucesso!!!');
+        return redirect('/admin/dashboard')->with('msg', 'Palestra excluída com sucesso!!!');
     }
 
 
