@@ -99,7 +99,7 @@ class AdminController extends Controller
 
         $cadpalestra->save();
 
-        return redirect('/admin/dashboard')->with('msg', 'Palestra '.$titulo.' cadastrada com sucesso!!!');
+        return redirect('/admin/dashboard')->with('msg', 'Palestra, '.$titulo.' cadastrada com sucesso!!!');
 
     } //Fim da function salvar
 

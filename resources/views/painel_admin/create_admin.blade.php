@@ -19,10 +19,10 @@
                 <input type="number" name="duracao" class="form-control" id="duracao" placeholder="Digite o tempo de duração" required>
             </div>
             <div class="mb-3">
-                <input type="date" name="data_liberacao" class="form-control" id="data" placeholder="Digite a data de liberação" required>
+                <input type="text" name="caminho_video" class="form-control" id="caminho_video" placeholder="Digite o caminho do video" required>
             </div>
             <div class="mb-3">
-                <input type="text" name="caminho_video" class="form-control" id="caminho_video" placeholder="Digite o caminho do video" required>
+                <input type="date" name="data_liberacao" class="form-control" id="data" placeholder="Digite a data de liberação" required>
             </div>
             <button type="submit" class="btn btn-success btn-create-edit">
                 <i class="fas fa-save icon"></i>
