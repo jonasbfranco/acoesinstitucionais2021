@@ -29,9 +29,19 @@
             <div class="mb-3">
                 <input type="file" name="nome_video" value="@php echo @$video @endphp" class="form-control-file" id="nome_video"  required>
             </div>
+            <br />
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                    0%
+                </div>
+            </div>
+            <br />
+            <div id="success">
 
+            </div>
+            <br />
 
-            <button type="submit" class="btn btn-success btn-create-edit progress-ajax"><i class="fas fa-save icon"></i> Salvar</button>
+            <button type="submit" name="salvar" class="btn btn-success btn-create-edit progress-ajax"><i class="fas fa-save icon"></i> Salvar</button>
         </form>
 
         <a href="{{ url()->previous() }}"><button class="btn btn-danger btn-create-edit"><i class="fas fa-ban icon"></i> Cancelar</button></a>
@@ -40,7 +50,41 @@
 
         </div> {{-- Fim do Container --}}
 
+        {{-- nome_video = file
+             salvar = upload
+            --}}
+        <script>
+            $(document).ready(function() {
 
+                $('form').ajaxForm({
+                    beforeSend:function(){
+                        $('success').empty();
+                    },
+                    uploadProgress:function(event, position, total, percentComplete)
+                    {
+                        $('.progress-bar').text(percentComplete + '%');
+                        $('.progress-bar').css('width', percentComplete + '%');
+                    },
+                    success:function(data)
+                    {
+                        if(data.errors)
+                        {
+                            $('.progress-bar').text('0%');
+                            $('.progress-bar').css('width', '0%');
+                            $('success').html('<span class="text-danger"<br>' +data.errors+'</br></span>');
+                        }
+                        if(data.success)
+                        {
+                            $('.progress-bar').text('Uploaded Completo');
+                            $('.progress-bar').css('width', '100%');
+                            $('success').html('<span class="text-success"<br>' +data.success+'</br></span>');
+                            $('success').append(data.image);
+                        }
+                    }
+                });
+
+            });
+        </script>
 
 
     <p>No campo duração, verificar o total de minutos do video e multiplicar por 2000, o resultado é o valor que sera incluido no campo duração.</p>

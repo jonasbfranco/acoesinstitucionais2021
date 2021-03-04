@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\usuario;
 use App\Models\video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 //use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -85,6 +87,18 @@ class AdminController extends Controller
     // Funcao para confirmar Palestra
     //=================================================================
     public function salvar(Request $request) {
+
+        $rules = array (
+            'nome_video' => 'image|max:819200 '
+        );
+
+        $error = Validator::make($request->all(), $rules);
+
+        if($error->fails())
+        {
+            return response()->json(['errors' => $error->errors()->all()]);
+        }
+
 
         $titulo = $request->titulo;
 
