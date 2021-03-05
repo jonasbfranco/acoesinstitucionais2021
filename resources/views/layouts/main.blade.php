@@ -29,7 +29,7 @@
         <link rel="stylesheet" href="/css/bootstrap.min.css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="../public/css/estilos.css">
+        <link rel="stylesheet" href="/css/estilos.css">
 
         <!-- FontAwesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" />
