@@ -26,7 +26,7 @@
         <title>@yield('title')</title>
 
         <!-- CSS Bootstrap -->
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
 
         <!-- CSS -->
         <link rel="stylesheet" href="../css/estilos.css">
