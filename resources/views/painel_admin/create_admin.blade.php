@@ -37,8 +37,8 @@
     </div> {{-- Fim do Container --}}
 
 
-    <p>No campo duração, verificar o total de minutos do video e multiplicar por 2000, o resultado é o valor que sera incluido no campo duração.</p>
-    <p>Exemplo: Video de 15 minutos, 15x2000 = 30000</p>
+    <p class="texto-p">No campo duração, verificar o total de minutos do video e multiplicar por 2000, o resultado é o valor que sera incluido no campo duração.</p>
+    <p class="texto-p">Exemplo: Video de 15 minutos, 15x2000 = 30000</p>
 
 
 </div> <!-- Fim DIV Container Login -->

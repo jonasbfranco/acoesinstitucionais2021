@@ -1,24 +1,24 @@
 console.log("Esta funcionando");
 
-const btnSwitch = document.querySelector("#switch");
+// Select the button
+const btn = document.querySelector("#switch");
 
-btnSwitch.addEventListener("click", () => {
+// Listen for a click on the button
+btn.addEventListener("click", function () {
+    // Toggle the .dark-theme class on the body
     document.body.classList.toggle("dark");
-    btnSwitch.classList.toggle("active");
+    btn.classList.toggle("active");
 
-    //Guardamos o modo em localstorage.
-    if (document.body.classList.constains("dark")) {
-        localStorage.setItem("dark-mode", "true");
-    } else {
-        localStorage.setItem("dark-mode", "false");
+    // Let's say the theme is equal to light
+    let theme = "light";
+    let btntoggle = "active";
+    // If the body contains the .dark-theme class...
+    if (document.body.classList.contains("dark")) {
+        // ...then let's make the theme dark
+        theme = "dark";
+        btntoggle = "";
     }
+    // Then save the choice in a cookie
+    document.cookie = "theme=" + theme;
+    document.cookie = "btntoggle=" + btntoggle;
 });
-
-//Obter o modo atual dark ou clear
-if (localStorage.getItem("dark-mode") === "true") {
-    document.body.classList.add("dark");
-    btnSwitch.classList.add("active");
-} else {
-    document.body.classList.remove("dark");
-    btnSwitch.classList.remove("active");
-}

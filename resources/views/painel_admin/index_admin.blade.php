@@ -17,9 +17,9 @@
         <p class="msg">{{ session('msg') }}</p>
         @endif
 
-        <img class="img-login" src="/img/logo.png" alt="">
-        <p class="text-titulo">Ações Institucionais 2021</p>
+        <img class="img-login" src="../../img/logo.png" alt="">
 
+        <p class="text-titulo">Ações Institucionais 2021</p>
 
         <form method="post" action="{{route('admin.dashboard')}}">
         @csrf

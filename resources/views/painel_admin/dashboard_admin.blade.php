@@ -19,7 +19,7 @@
     @endphp
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-fixed-top">
 
         <div class="container-fluid">
             <p class="navbar-user">{{ $logado }}, bem vindo.</p>
