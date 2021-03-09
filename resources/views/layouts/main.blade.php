@@ -56,6 +56,6 @@
             <p>Jonas B. Franco - TI - Colombo Agroindustria &copy; 2021</p>
         </footer>
         {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
-        <script src="../public/js/script.js"></script>
+        <script src="/js/script.js"></script>
     </body>
 </html>

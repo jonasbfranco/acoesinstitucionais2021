@@ -79,11 +79,6 @@ body.dark {
   padding-top: 40px;
   padding-bottom: 40px;
   height: 70%;
-  background: #fefefe;
-}
-
-body.dark .container-login {
-  background: #232b32;
 }
 
 .container-login div {
