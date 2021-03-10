@@ -27,7 +27,7 @@ body {
     background: var(--bkg-color);
     font-family: "Montserrat", sans-serif;
     transition: 0.3s ease all;
-
+    background: $blanco;
     &.dark {
         background: $dark;
     }

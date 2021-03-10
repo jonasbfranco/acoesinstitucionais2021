@@ -41,19 +41,18 @@
     </head>
     <body class="<?= @$themeClass; ?>">
 
-        <div class="flex-toggle">
-            <div class="position-absolute top-0 end-0 p-2 tema-dark">
-                <button class="switch <?= @$btnClass; ?>" id="switch">
-                    <span><i class="fas fa-sun"></i></span>
-                    <span><i class="fas fa-moon"></i></span>
-                </button>
-            </div>
-        </div>
 
         @yield('content')
 
         <footer>
+
             <p>Jonas B. Franco - TI - Colombo Agroindustria &copy; 2021</p>
+                <p class="text-center"><button class="switch <?= @$btnClass; ?>" id="switch">
+                    <span><i class="fas fa-sun"></i></span>
+                    <span><i class="fas fa-moon"></i></span>
+                </button>
+                </p>
+
         </footer>
         {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
         <script src="/js/script.js"></script>
