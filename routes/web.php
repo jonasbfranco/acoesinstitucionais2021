@@ -57,6 +57,7 @@ Route::post('/admin', [AdminController::class, 'store'])->name('palestra.salvar'
 
 Route::post('/admin/logout', [AdminController::class, 'logout']);
 
+Route::get('/naoautorizado', [AdminController::class, 'index'])->name('naoautorizado');
 
 
 // Route::get('/', function() {

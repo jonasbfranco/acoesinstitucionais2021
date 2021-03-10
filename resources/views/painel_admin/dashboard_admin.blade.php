@@ -13,7 +13,12 @@
         @$logado = $_SESSION['nome'];
 
         if (!isset($logado)) {
-            return redirect('/admin')->with('msg', 'Vizualização não autorizada, fale com o Administrador!!!');
+
+            echo ("<script LANGUAGE='JavaScript'>
+                    window.alert('Você precisa estar logado para acessar esta página!!!');
+                    window.location.href='./';
+                    </script>");
+            exit;
         }
 
     @endphp
