@@ -16,7 +16,7 @@
 
             echo ("<script LANGUAGE='JavaScript'>
                     window.alert('Você precisa estar logado para acessar esta página!!!');
-                    window.location.href='./admin';
+                    window.location.href='/admin';
                     </script>");
             exit;
         }
