@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://www2.usinacolombo.com.br/ai2021/'),
+    'url' => env('APP_URL', 'http://localhost2'),
 
     'asset_url' => env('ASSET_URL', null),
 
