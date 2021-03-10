@@ -26,10 +26,10 @@
         <title>@yield('title')</title>
 
         <!-- CSS Bootstrap -->
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="/css/estilos.css">
+        <link rel="stylesheet" href="css/estilos.css">
 
         <!-- FontAwesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" />
@@ -55,6 +55,6 @@
 
         </footer>
         {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
-        <script src="/js/script.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>

@@ -11,6 +11,7 @@ $azul: #3e60e9;
 $azulHover: #254be6;
 $dark: #232b32;
 $darkinput: #323232;
+$blue: #347eb7;
 
 $sombraDark: 10px 10px 20px rgba(170, 170, 170, 0.16);
 $sombraLight: 10px 10px 20px rgba(0, 0, 0, 0.16);
@@ -126,7 +127,7 @@ input {
 .form-control {
     body.dark & {
         border: 1px solid $grisOscuro !important;
-        color: $branco !important;
+        color: $blue !important;
     }
 }
 
