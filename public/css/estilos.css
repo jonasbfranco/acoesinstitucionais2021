@@ -89,10 +89,12 @@ body.dark {
   padding: 0 15px;
   margin: auto;
   text-align: center !important;
+  color: #323232;
 }
 
 body.dark .container-login div {
   background-color: #232b32;
+  color: #323232;
 }
 
 .img-login {

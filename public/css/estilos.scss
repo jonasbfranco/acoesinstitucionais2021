@@ -95,8 +95,10 @@ body {
     padding: 0 15px;
     margin: auto;
     text-align: center !important;
+    color: $darkinput;
     body.dark & {
         background-color: $dark;
+        color: $darkinput;
     }
 }
 
