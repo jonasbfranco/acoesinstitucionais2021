@@ -17,9 +17,6 @@ use App\Http\Controllers\PalestrasController;
 use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\AdminController;
 
-$rtpadrao = "http://www2.colomboagroindustria.com.br/ai2021/";
-$rtpadraoadm = "http://www2.colomboagroindustria.com.br/ai2021/admin";
-
 
 Route::get('/', [FuncionarioController::class, 'index'])->name('home');
 
@@ -42,11 +39,11 @@ Route::get('/confirma', [PalestrasController::class, 'confirma']);
 //Route::post('/confirma', [PalestrasController::class, 'salvar'])->name('palestras.confirmar');
 
 
-Route::get('$rtpadrao/admin', [AdminController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index']);
 
-Route::post('$rtpadrao/admin/dashboard', [AdminController::class, 'dashboard']);
+Route::post('/admin/dashboard', [AdminController::class, 'dashboard']);
 
-Route::get('$rtpadrao/admin/dashboard', [AdminController::class, 'show'])->name('admin.dashboard');
+Route::get('/admin/dashboard', [AdminController::class, 'show'])->name('admin.dashboard');
 
 Route::get('/admin/create', [AdminController::class, 'create']);
 
