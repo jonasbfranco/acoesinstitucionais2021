@@ -41,7 +41,7 @@ Route::get('/confirma', [PalestrasController::class, 'confirma']);
 
 Route::get('/admin', [AdminController::class, 'index']);
 
-Route::post('/admin/dashboard', [AdminController::class, 'dashboard']);
+Route::post('http://www2.usinacolombo.com.br/ai2021/admin/dashboard', [AdminController::class, 'dashboard']);
 
 Route::get('/admin/dashboard', [AdminController::class, 'show'])->name('admin.dashboard');
 
