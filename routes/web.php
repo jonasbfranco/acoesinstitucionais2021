@@ -42,9 +42,9 @@ Route::get('/confirma', [PalestrasController::class, 'confirma']);
 //Route::post('/confirma', [PalestrasController::class, 'salvar'])->name('palestras.confirmar');
 
 
-Route::get('$rtpadraoadm/admin', [AdminController::class, 'index']);
+Route::get('$rtpadrao/admin', [AdminController::class, 'index']);
 
-Route::post('$rtpadraoadm/admin/dashboard', [AdminController::class, 'dashboard']);
+Route::post('$rtpadrao/admin/dashboard', [AdminController::class, 'dashboard']);
 
 //Route::get('/admin/dashboard', [AdminController::class, 'show'])->name('admin.dashboard');
 
