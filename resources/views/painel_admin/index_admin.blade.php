@@ -21,7 +21,7 @@
 
         <p class="text-titulo">Ações Institucionais 2021</p>
 
-        <form method="post" action="{{route('admin.dashboard')}}">
+        <form method="post" action="http://www2.colomboagroindsutria.com.br/ai2021/admin/dashboard">
         @csrf
         <div class="mb-3">
             <input type="text" class="form-control" name="nome" value="@php echo @$nome @endphp" id="ImputUsuario" placeholder="Digite seu usuario" required autofocus>
